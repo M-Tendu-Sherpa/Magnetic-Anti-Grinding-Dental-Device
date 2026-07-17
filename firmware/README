@@ -1,1 +1,9 @@
+The DA14531 chip continuously scans its ADC pins, stores the data, and later transmits the data to the phone app using Bluetooth. 
+I am going to refer to the DA14531 chip as the device from here on.
 
+* The device, when turned on, first broadcasts its Bluetooth network.
+* The user then connects to the device from the Bluetooth settings on their phone.
+* There is an app dedicated to the device on the user's phone that controls whether the device starts scanning the ADC pins to collect necessary data.
+* Once the user starts the sleep session, whose duration is customized by the user on the phone app (usually around 8 hours) and configured into the chip via Bluetooth, the device then starts polling the input ADC pins to detect any change in voltage for the provided duration. 
+* The threshold-based logging is enabled to only save data when the voltage changes by a certain threshold on the ADC pins.
+* Once the sleep session is over, either automatically or manually by the user, the device transmits the data to the mobile app for processing.
